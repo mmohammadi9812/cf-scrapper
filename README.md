@@ -16,7 +16,7 @@ The two main files are:
 
 *NOTE*: there is a limit of 5 requests per second for site
 
-change the `num_cores` (in `scrap-items.ipynb` file) to 5 if you're using a CPU with more than 5 physical cores*
+change the `num_cores` (in `scrap-items.ipynb` file) to 5 if you're using a CPU with more than 5 physical cores
 
 otherwise, your ip might gets banned (temporarily)
 
