@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 mechanicalsoup = "*"
 pandas = "*"
-pandarallel = "*"
 tqdm = "*"
 scikit-learn = "*"
+markdownify = "*"
 
 [dev-packages]
 notebook = "*"
