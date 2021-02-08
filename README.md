@@ -39,3 +39,6 @@ jupyter notebook
 
 first, open `scrap-links.ipynb`, run all cells  
 then open `scrap-items.ipynb` and run all cells  
+
+## LICENSE
+This repository is licensed under `cc by-nc-sa 4.0`, you can find full text in `license.txt`
