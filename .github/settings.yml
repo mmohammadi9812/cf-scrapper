@@ -1,0 +1,9 @@
+repository:
+  name: cf-scrapper
+  description: this repo is a mirror of https://git.sr.ht/~mmohammadi9812/cf-scrapper/
+  topics: python, scrap, scrapping
+  private: false
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  default_branch: master
