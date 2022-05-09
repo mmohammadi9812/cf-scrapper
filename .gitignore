@@ -140,6 +140,7 @@ cython_debug/
 
 *.csv
 *.sqlite3
+*.db
 
 .vscode
 
