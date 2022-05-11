@@ -6,7 +6,7 @@ import requests
 
 API_ADDRESS = "https://codeforces.com/api/problemset.problems"
 
-def main():
+def fetch_links():
   r = requests.get(API_ADDRESS)
   r.raise_for_status()
   data = r.json()
@@ -45,4 +45,4 @@ def main():
 
 
 if __name__ == "__main__":
-  main()
+  fetch_links()

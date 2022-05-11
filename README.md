@@ -1,14 +1,19 @@
 # Code-forces Scraper
 ---
 ## Running
-use `pipenv` to install dependencies: `pipenv install`
+use `pipenv` to install dependencies:
+```shell
+pipenv install
+```
 
-first run `scrap-items.py` to fetch problems and tags from codeforces.com
+to run this project, run:
+```shell
+pipenv run python scrap.py
+```
 
-then run `scrap-links.py` to fetch details from it
+The site has a throttling rate of 5 requests per second.
 
-<small> The site has a throttling rate of 5 requests per second. </small> <br />
-<small> more requests might result in a temporary ban. </small>
+more requests might result in a temporary ban.
 
 ## LICENSE
  Copyright 2022 Mohammad Mohamamdi. All rights reserved.

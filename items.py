@@ -71,7 +71,6 @@ def scrap_notes(problem_statement: Tag, name: str):
       out["notes"] = "N/A"
   return out
 
-
 def scrap(row: pd.Series, browser: mechanicalsoup.StatefulBrowser):
     out = {
       "name": row["name"],
@@ -92,7 +91,6 @@ def scrap(row: pd.Series, browser: mechanicalsoup.StatefulBrowser):
 
     return out
 
-
 def scrap_chunk(chunk: pd.DataFrame, browser: mechanicalsoup.StatefulBrowser):
     df = pd.DataFrame()
 
@@ -111,8 +109,7 @@ def filter_df(df: pd.DataFrame):
   df["time_limit"] = df["time_limit"].apply(lambda r: int(re.search(r"^(\d+)", r).group(1)))
   return df
 
-
-def main():
+def fetch_problems():
   if not Path("problems.db").exists():
     raise FileNotFoundError("problems database not found")
   if Path("details.pkl").exists():
@@ -120,7 +117,8 @@ def main():
 
   user_agent = "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.10; rv:62.0) Gecko/20100101 Firefox/49.0"
   browser = mechanicalsoup.StatefulBrowser(user_agent=user_agent)
-  num_cores = max(multiprocessing.cpu_count(), 5)
+  cpu_count = multiprocessing.cpu_count()
+  num_cores = cpu_count if cpu_count <= 5 else 5
 
   with sqlite3.connect("problems.db") as conn:
     df = pd.read_sql_query("SELECT * FROM problems", conn)
@@ -134,4 +132,4 @@ def main():
 
 
 if __name__ == "__main__":
-  main()
+  fetch_problems()
